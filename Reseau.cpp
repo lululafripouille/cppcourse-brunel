@@ -17,10 +17,10 @@ Reseau::Reseau()
 			reseau[i] = new Neurone(Inhibiteur);
 		}
 	}
-	static std::random_device rd;										//le static n'est pas indispensable ici
-	static std::mt19937 gen(rd());
-	static std::uniform_int_distribution<> disExc (0, nombreExcitateurs-1);
-	static std::uniform_int_distribution<> disInh (nombreExcitateurs, nombreExcitateurs+nombreInhibiteurs-1);
+	std::random_device rd;										//le static n'est pas indispensable ici
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<> disExc (0, nombreExcitateurs-1);
+	std::uniform_int_distribution<> disInh (nombreExcitateurs, nombreExcitateurs+nombreInhibiteurs-1);
 	for (int i (0); i < tailleReseau; ++i) {
 		std::array<unsigned short int, nombreConnexions> ligne;
 		for (int j(0); j < ConnexionExcitatrices ; ++j) {				//assigne une connexion à une relation selon le nombre généré par Poisson 
